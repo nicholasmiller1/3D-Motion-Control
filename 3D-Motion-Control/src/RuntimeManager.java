@@ -1,8 +1,9 @@
 import data.JNAInterpreter;
 import data.JOY_SHOCK_STATE;
+import data.IMU_STATE;
 import data.MOTION_STATE;
 
-public class DataCollector {
+public class RuntimeManager {
 
     private static long startTime;
 
@@ -28,10 +29,12 @@ public class DataCollector {
         JNAInterpreter.pollImuState(selectedDeviceId, true);
         JNAInterpreter.pollMotionState(selectedDeviceId, true);
 
-        while (true) {
-            MOTION_STATE motionInput = JNAInterpreter.pollMotionState(selectedDeviceId, false);
-            float accelX = motionInput.accelX;
-            System.out.println(accelX);
-        }
+//        while (true) {
+//            MOTION_STATE motionState = JNAInterpreter.pollMotionState(selectedDeviceId, false);
+//            double mag = Math.sqrt(Math.pow(motionState.quatW, 2) + Math.pow(motionState.quatX, 2) + Math.pow(motionState.quatY, 2) + Math.pow(motionState.quatZ, 2));
+//            System.out.printf("( %.3f, %.3f, %.3f, %.3f ) | %.4f \n", motionState.quatW, motionState.quatX, motionState.quatY, motionState.quatZ, mag);
+//        }
+
+//        VectorWindow.main(args);
     }
 }
