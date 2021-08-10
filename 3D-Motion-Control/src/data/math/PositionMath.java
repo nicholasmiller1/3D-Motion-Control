@@ -68,7 +68,7 @@ public class PositionMath {
     }
 
     public PVector getVelocity(PVector accel) {
-        return previousAccel.add(accel).div(2.0f).add(velocityAccumulator);
+        return previousAccel.add(accel).div(2.0f * 60).add(velocityAccumulator);
     }
 
     public void updateVelocity(PVector prevAccel, PVector prevVel) {
@@ -77,7 +77,7 @@ public class PositionMath {
     }
 
     public PVector getPosition(PVector vel) {
-        return previousVel.add(vel).div(2.0f).add(positionAccumulator);
+        return previousVel.add(vel).div(2.0f * 60).add(positionAccumulator);
     }
 
     public void updatePosition(PVector prevVel, PVector prevPos) {

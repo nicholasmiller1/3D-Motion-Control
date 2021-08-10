@@ -10,7 +10,7 @@ import javax.xml.crypto.Data;
 public class PositionWindow extends PApplet {
 
     private static final int SCREEN_SIZE = 800;
-    private final float SCALE = 1;
+    private final float SCALE = 10;
 
     public static void main(String[] args) {
         DataCollector.init();
@@ -33,8 +33,10 @@ public class PositionWindow extends PApplet {
 
         stroke(255);
         strokeWeight(2);
-        line(-width/2, p.y * SCALE, width/2, p.y * SCALE);
-        line(p.x * SCALE, -height/2, p.x * SCALE, height/2);
+//        line(-width/2, p.y * SCALE, width/2, p.y * SCALE);
+//        line(p.x * SCALE, -height/2, p.x * SCALE, height/2);
+        line(-width/2, 0, width/2, 0);
+        line(0, -height/2, 0, height/2);
 
         stroke(255,0,0);
         strokeWeight(15);

@@ -1,4 +1,5 @@
 import data.DataCollector;
+import data.IMU_STATE;
 import data.MOTION_STATE;
 import data.math.Quaternion;
 import org.gicentre.utils.stat.*;
@@ -31,16 +32,19 @@ public class GraphWindow extends PApplet {
     }
 
     public void setup() {
+        frameRate(60);
         initAccelPlots();
         
         if (EXPANDED) {
             initVelPlots();
             initPosPlots();
         }
+
+        System.out.println("Framerate: " + frameRate);
     }
 
     public void draw() {
-        if (accelData[0].size() == 500) {
+        if (accelData[0].size() == 540) {
             for (int i = 0; i < accelData.length; i++) {
                 accelData[i].clear();
                 
@@ -93,7 +97,7 @@ public class GraphWindow extends PApplet {
     }
     
     private void initAccelPlots() {
-        final float SCALE = 0.1f;
+        final float SCALE = .1f;
         accelPlots = new XYChart[3];
         accelData = new LinkedList[3];
 
@@ -107,7 +111,7 @@ public class GraphWindow extends PApplet {
 
             accelPlots[i].setXAxisAt(0);
             accelPlots[i].setMinX(0);
-            accelPlots[i].setMaxX(500);
+            accelPlots[i].setMaxX(540);
 
             accelPlots[i].setMinY(-1 * SCALE);
             accelPlots[i].setMaxY(1 * SCALE);
@@ -141,7 +145,7 @@ public class GraphWindow extends PApplet {
 
             velPlots[i].setXAxisAt(0);
             velPlots[i].setMinX(0);
-            velPlots[i].setMaxX(500);
+            velPlots[i].setMaxX(540);
 
             velPlots[i].setMinY(-1 * SCALE);
             velPlots[i].setMaxY(1 * SCALE);
@@ -175,7 +179,7 @@ public class GraphWindow extends PApplet {
 
             posPlots[i].setXAxisAt(0);
             posPlots[i].setMinX(0);
-            posPlots[i].setMaxX(500);
+            posPlots[i].setMaxX(540);
 
             posPlots[i].setMinY(-1 * SCALE);
             posPlots[i].setMaxY(1 * SCALE);
@@ -192,5 +196,13 @@ public class GraphWindow extends PApplet {
 
         posPlots[0].showXAxis(true);
         posPlots[0].showYAxis(true);
+    }
+
+    public void keyPressed() {
+        if (key == 'p') {
+            noLoop();
+        } else if (key == 'o') {
+            loop();
+        }
     }
 }
