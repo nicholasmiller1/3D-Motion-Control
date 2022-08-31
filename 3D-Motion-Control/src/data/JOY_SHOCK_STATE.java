@@ -24,8 +24,12 @@ public class JOY_SHOCK_STATE extends Structure {
     }
 
     @Override
-    protected List getFieldOrder() {
+    protected List<String> getFieldOrder() {
         return Arrays.asList("buttons", "lTrigger", "rTrigger", "stickLX", "stickLY", "stickRX", "stickRY");
+    }
+
+    protected String formattedString() {
+        return "[" + buttons + ", " + lTrigger + ", " + rTrigger + ", " + stickLX + ", " + stickLY + ", " + stickRX + ", " + stickRY + "]";
     }
 
     public static class ByReference extends JOY_SHOCK_STATE implements Structure.ByReference {}

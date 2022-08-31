@@ -28,8 +28,12 @@ public class MOTION_STATE extends Structure {
     }
 
     @Override
-    protected List getFieldOrder() {
+    protected List<String> getFieldOrder() {
         return Arrays.asList("quatW", "quatX", "quatY", "quatZ", "accelX", "accelY", "accelZ", "gravX", "gravY", "gravZ");
+    }
+
+    protected String formattedString() {
+        return "[" + quatW + ", " + quatX + ", " + quatY + ", " + quatZ + ", " + accelX + ", " + accelY + ", " + accelZ + ", " + gravX + ", " + gravY + ", " + gravZ + "]";
     }
 
     public static class ByReference extends MOTION_STATE implements Structure.ByReference {}

@@ -23,8 +23,12 @@ public class IMU_STATE extends Structure {
     }
 
     @Override
-    protected List getFieldOrder() {
+    protected List<String> getFieldOrder() {
         return Arrays.asList("accelX", "accelY", "accelZ", "gyroX", "gyroY", "gyroZ");
+    }
+
+    protected String formattedString() {
+        return "[" + accelX + ", " + accelY + ", " + accelZ + ", " + gyroX + ", " + gyroY + ", " + gyroZ + "]";
     }
 
     public static class ByReference extends IMU_STATE implements Structure.ByReference {}
