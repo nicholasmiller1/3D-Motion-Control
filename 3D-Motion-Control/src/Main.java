@@ -27,12 +27,12 @@ public class Main {
         VectorWindow v = new VectorWindow();
         PApplet.runSketch(vArgs, v);
 
-        String[] gArgs = {"GraphWindow"};
-        GraphWindow g = new GraphWindow();
-        PApplet.runSketch(gArgs, g);
+//        String[] gArgs = {"GraphWindow"};
+//        GraphWindow g = new GraphWindow();
+//        PApplet.runSketch(gArgs, g);
 
-        String[] pArgs = {"PositionWindow"};
-        PositionWindow p = new PositionWindow();
-        PApplet.runSketch(pArgs, p);
+//        String[] pArgs = {"PositionWindow"};
+//        PositionWindow p = new PositionWindow();
+//        PApplet.runSketch(pArgs, p);
     }
 }

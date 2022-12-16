@@ -11,7 +11,7 @@ import java.util.List;
 public class GraphWindow extends PApplet {
 
     private static final int[] SCREEN_SIZE = new int[]{800, 300};
-    private final boolean EXPANDED = true;
+    private final boolean EXPANDED = false;
 
     private XYChart[] accelPlots;
     private XYChart[] velPlots;
@@ -124,6 +124,8 @@ public class GraphWindow extends PApplet {
 
         accelPlots[0].showXAxis(true);
         accelPlots[0].showYAxis(true);
+        accelPlots[0].setXAxisLabel("Time (ms)");
+        accelPlots[0].setYAxisLabel("Acceleration (m/s^2)");
     }
 
     private void initVelPlots() {

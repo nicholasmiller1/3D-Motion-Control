@@ -10,16 +10,18 @@ public class VectorWindow extends PApplet {
     private final int SCALE = 100;
 
     private final PVector initialVector = new PVector(0,0,1);
+    private final PVector offset = new PVector(0, 0, 0);
     private final PVector[] initialBox = {
-            new PVector(0.433f, 0.25f, 0.866f), // sqrt(3)/4, 1/4, sqrt(3)/2
-            new PVector(0.433f, -0.25f, 0.866f),
-            new PVector(-0.433f, -0.25f, 0.866f),
-            new PVector(-0.433f, 0.25f, 0.866f),
-            new PVector(0.433f, 0.25f, -0.866f),
-            new PVector(0.433f, -0.25f, -0.866f),
-            new PVector(-0.433f, -0.25f, -0.866f),
-            new PVector(-0.433f, 0.25f, -0.866f),
+            new PVector(0.433f, 0.25f, 0.866f).add(offset), // sqrt(3)/4, 1/4, sqrt(3)/2
+            new PVector(0.433f, -0.25f, 0.866f).add(offset),
+            new PVector(-0.433f, -0.25f, 0.866f).add(offset),
+            new PVector(-0.433f, 0.25f, 0.866f).add(offset),
+            new PVector(0.433f, 0.25f, -0.866f).add(offset),
+            new PVector(0.433f, -0.25f, -0.866f).add(offset),
+            new PVector(-0.433f, -0.25f, -0.866f).add(offset),
+            new PVector(-0.433f, 0.25f, -0.866f).add(offset),
     };
+
 
     public static void main(String[] args) {
         DataCollector.init();

@@ -47,7 +47,7 @@ public class DataCollector {
         DataCollector.clearFile("motion_output.txt");
 
         // Prepare acceleration input stream
-        final int smoothingStep = 3;
+        final int smoothingStep = 10;
         pmath = new PositionMath(smoothingStep);
     }
 
